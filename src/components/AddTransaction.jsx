@@ -6,17 +6,17 @@ const AddTransaction = () => {
   const [text, setText] = useState("");
   const [amount, setAmount] = useState(0);
 
-  const onSubmit= e =>{
-    e.preventDefault()
+  const onSubmit = (e) => {
+    e.preventDefault();
 
-    const newTransaction ={
-      id:uuid(),
+    const newTransaction = {
+      id: uuid(),
       text,
       amount: +amount
-    }
+    };
 
-    addTransaction(newTransaction)
-  }
+    addTransaction(newTransaction);
+  };
   return (
     <>
       <h3>Add new transaction</h3>
@@ -32,8 +32,8 @@ const AddTransaction = () => {
         </div>
         <div className="form-control">
           <label htmlFor="amount">
-             Transaction Amount <br />
-            (negative - expense, positive - income)
+            Transaction Amount <br />
+            (expense (-) income(+))
           </label>
           <input
             type="number"
@@ -42,7 +42,7 @@ const AddTransaction = () => {
             placeholder="Enter amount..."
           />
         </div>
-        <button  className="btn">Add transaction</button>
+        <button className="btn">Add transaction</button>
       </form>
     </>
   );
